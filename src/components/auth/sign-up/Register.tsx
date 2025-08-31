@@ -23,9 +23,9 @@ export function Register() {
     resolver: zodResolver(RegisterValidationSchema),
     mode: "onTouched",
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
+      name: "Zack",
+      email: "zack@gmail.com",
+      password: "11111111",
     },
   });
 
@@ -41,8 +41,9 @@ export function Register() {
         router.push("sign-in");
       } catch (error) {
         console.log(error);
-        toast.success("Error", {
-          description: "Signed up Failed",
+        toast.error("Error", {
+          description:
+            error instanceof Error ? error.message : "Registration failed",
         });
       }
     });

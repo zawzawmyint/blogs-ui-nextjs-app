@@ -26,9 +26,9 @@ export async function addBlog(formData: FormData): Promise<BlogResponse> {
   });
 
   if (!response.ok) {
-    const errorData = await response.text();
+    const errorData = await response.json();
     throw new Error(
-      `Failed to add blog: ${response.status} ${response.statusText}. Details: ${errorData}`
+      errorData.message || `Failed to add blog: ${response.statusText}`
     );
   }
 
@@ -59,9 +59,9 @@ export async function updateBlog(
   });
 
   if (!response.ok) {
-    const errorData = await response.text();
+    const errorData = await response.json();
     throw new Error(
-      `Failed to update blog: ${response.status} ${response.statusText}. Details: ${errorData}`
+      errorData.message || `Failed to update blog: ${response.statusText}`
     );
   }
 
@@ -89,8 +89,10 @@ export async function deleteBlog(id: string): Promise<BlogResponse> {
   });
 
   if (!response.ok) {
-    const errorData = await response.text();
-    throw new Error(` ${errorData}`);
+    const errorData = await response.json();
+    throw new Error(
+      errorData.message || `Failed to delete blog: ${response.statusText}`
+    );
   }
 
   const data = await response.json();

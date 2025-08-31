@@ -52,7 +52,7 @@ const BlogAdd = ({
         // will throw exception if it is not success
         if (!result.success) {
           toast.error("ERROR", {
-            description: result.message || "Failed to add blog",
+            description: result.message || "Failed to update blog",
           });
           return;
         }

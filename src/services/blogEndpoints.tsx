@@ -22,7 +22,8 @@ export async function fetchAllBlogs(): Promise<BlogsResponse> {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      next: { tags: ["Blogs"] },
+      next: { tags: ["blogs"] },
+      cache: "force-cache",
     });
 
     if (!response.ok) {
@@ -62,6 +63,7 @@ export async function searchAllBlogs(searchParams: {
         Authorization: `Bearer ${token}`,
       },
       next: { tags: ["blogs"] },
+      cache: "force-cache",
     });
 
     if (!response.ok) {
@@ -96,6 +98,7 @@ export async function fetchBlogDetails(id: string): Promise<BlogResponse> {
         Authorization: `Bearer ${token}`,
       },
       next: { tags: ["blogs"] },
+      cache: "force-cache",
     });
 
     if (!response.ok) {

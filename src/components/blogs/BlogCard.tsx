@@ -20,7 +20,7 @@ export function BlogCard({ blog }: { blog: Blog }) {
   const { data: session } = useSession();
   console.log("User session", session?.user?.id, blog.User.id);
   return (
-    <Card className="w-full border-0 shadow-sm hover:border-1 hover:shadow-lg transition-all duration-500">
+    <Card className="w-full border-0 shadow-sm hover:border-1 hover:shadow-lg hover:translate-x-1 transition-all duration-500">
       <Link href={`/blogs/${blog.id}`}>
         <CardHeader>
           <BlogUserProfile name={blog.User.name} />

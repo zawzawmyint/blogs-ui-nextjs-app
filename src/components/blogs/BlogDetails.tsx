@@ -22,7 +22,7 @@ export async function BlogDetails({ id }: { id: string }) {
   return (
     <Card className="w-full shadow-none border-0">
       <CardHeader>
-        <CardTitle className="text-5xl">{res.data.name}</CardTitle>
+        <CardTitle className="text-3xl sm:text-5xl">{res.data.name}</CardTitle>
         <div className="flex gap-6 items-center mt-5">
           <CardDescription className="font-medium ">
             <BlogUserProfile name={res.data.User.name} />
