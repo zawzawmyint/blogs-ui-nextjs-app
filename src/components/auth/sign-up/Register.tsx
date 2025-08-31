@@ -23,9 +23,9 @@ export function Register() {
     resolver: zodResolver(RegisterValidationSchema),
     mode: "onTouched",
     defaultValues: {
-      name: "Zack",
-      email: "zack@gmail.com",
-      password: "11111111",
+      name: "",
+      email: "",
+      password: "",
     },
   });
 
