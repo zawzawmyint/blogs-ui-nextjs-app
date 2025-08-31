@@ -77,7 +77,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Preview Link
 
-Open [https://blogs-ui-nextjs-app.vercel.app/](https://blogs-ui-nextjs-app.vercel.app/) in your browser
+Open [https://blogs-zack.vercel.app/](https://blogs-ui-nextjs-app.vercel.app/) in your browser
 
 ## Blog backend repository
 
